@@ -6,7 +6,7 @@ Registration_users_details={}
 Statements={}
 @app.route('/')
 def main():
-    return render_template('main.html')
+    return render_template('index.html')
 @app.route('/Registration',methods=['GET','POST'])
 def Registration():
     if request.method=='POST':
@@ -150,7 +150,7 @@ def userAcDel():
     if request.cookies.get('user'):
         username=request.cookies.get('user')
         Registration_users_details.pop(username)
-        resp=make_response(redirect(url_for('main')))
+        resp=make_response(redirect(url_for('index')))
         resp.delete_cookie('user')
         return resp
     else:
