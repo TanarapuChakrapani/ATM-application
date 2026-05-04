@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRrgJnM9FLGc_bijjNnpD5Fxu6wd6QEwjP2g&s" />
+</head>
+<style>
+    * {
+        font-family: sans-serif;
+        margin: 0;
+    }
+
+    #main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    #container h1 {
+        text-align: center;
+        color: white;
+        font-size: 70px;
+        text-transform: uppercase;
+    }
+
+    .myform {
+        color: white;
+        padding: 20px;
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .myform input {
+        margin-bottom: 30px;
+        padding: 20px 100px 20px 10px;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    .myform button {
+        padding: 20px 20px;
+        font-size: medium;
+        font-weight: bolder;
+        background-color: #FFCE12;
+        border-radius: 10px;
+        border: none;
+    }
+
+    #forgot {
+        margin-bottom: 20px;
+        color: #FFCE12;
+        font-size: medium;
+        font-weight: bold;
+        text-decoration: none;
+        width: 140px;
+    }
+
+    .create_new_account {
+        text-align: center;
+        margin-top: 15px;
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+    }
+
+    .create_new_account span {
+        color: #FFCE12;
+    }
+
+    @media all and (max-width:576px) {
+        #container {
+            width: 500px;
+        }
+
+        .myform {
+            width: auto;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @media all and (min-width:576px) and (max-width:768px) {
+        #container {
+            width: 650px;
+        }
+
+        .myform {
+            width: auto;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @media all and (min-width:768px) and (max-width:992px) {
+        #container {
+            width: 850px;
+        }
+
+        .myform {
+            width: auto;
+            display: flex;
+            justify-content: center;
+        }
+    }
+</style>
+
+<body style="background-color: #151357;">
+    <section id="main">
+        <div id="container">
+            {% with messages= get_flashed_messages() %}
+            {% if messages %}
+                {% for i in messages %}
+                    <p style="color: red; margin-top: 30px; text-align: center;">{{ i }}</p>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <h1>Log in</h1>
+            <form class="myform" method="post"> 
+                <label>User Name</label>
+                <input type="text"  name="username" placeholder="Enter User Name" required>
+                <label>Password</label>
+                <input type="password"  name="password" placeholder="Enter Password" required>
+                <!-- <lable>PIN Number</lable>
+                <input type="password"  name="pinnumber" placeholder="Enter PIN"> -->
+                <a href="#" id="forgot">Forgot password?</a>
+                <button>Submit</button>
+                <a href="{{url_for('Registration')}}" class="create_new_account">Don't have an account? <span>Register Now!</span></a>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

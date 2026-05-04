@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="icon" href="https://www.shutterstock.com/image-vector/atm-symbol-button-sign-vector-600nw-2407755695.jpg">
+</head>
+<style>
+    *{
+        margin: 0;
+        font-family: sans-serif;
+    }
+    #container{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #container h1{
+        text-transform: uppercase;
+        font-size: 70px;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .myform{
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        padding: 20px;
+    }
+    .myform input{
+        margin-bottom: 30px;
+        padding: 20px 100px 20px 10px;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+    }
+    .myform button {
+        padding: 20px 20px;
+        font-size: medium;
+        font-weight: bolder;
+        background-color: #FFCE12;
+        border-radius: 10px;
+        border: none;
+    }
+    .myform small{
+        text-align: center;
+        margin-top: 15px;
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+        font-size: medium;
+    }
+    small a{
+        color: #FFCE12;
+        text-decoration: none;
+    }
+    @media all and (max-width:576px){
+        #container{
+            height: auto;
+            width: 576px;
+        }
+        #container h1{
+            text-align: center;
+            margin-top: 10px;
+            font-size: 50px;
+        }
+        .myform{
+            width: 500px;
+        }
+    }
+     @media all and (min-width:576px) and (max-width:768px){
+        #container{
+            height: auto;
+            width: 768px;
+        }
+        #container h1{
+            text-align: center;
+        }
+        .myform{
+            width: 650px;
+        }
+    }
+    @media all and (min-width:768px) and (max-width:992px){
+        #container{
+            height: auto;
+            width: 784px;
+        }
+        #container h1{
+            text-align: center;
+            font-size: 50px;
+            margin-top: 10px;
+        }
+        .myform{
+            width: 700px;
+        }
+    }
+</style>
+<body style="background-color: #151357; color: white;">
+    <section id="container">
+        {% with messages= get_flashed_messages() %}
+            {% if messages %}
+                {% for i in messages %}
+                    <p style="color: red; margin-top: 30px;">{{ i }}</p>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h1>Resgistration Form</h1>
+        <div>
+            <form class="myform" method="post">
+                <label>User Name</label>
+                <input type="text" name="UserName" placeholder="Enter User Name" required>
+                <label>Phone Number</label>
+                <input type="text" name="PhoneNumber" placeholder="Enter Phone Number" required>
+                <label>Email</label>
+                <input type="email" name="Email" placeholder="Enter Email" required>
+                <label>Password</label>
+                <input type="password" name="Password" placeholder="Enter Password" required>
+                <label>Confirm password</label>
+                <input type="password" name="CPassword" placeholder="Re-Enter Password" required>
+                <button>Register</button>
+                <small>If you have already account? <a href="{{url_for('Login')}}">Log in</a></small>
+            </form>
+        </div>
+                
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="https://www.shutterstock.com/image-vector/atm-symbol-button-sign-vector-600nw-2407755695.jpg">
+</head>
+<style>
+    *{
+        margin: 0%;
+        font-family: sans-serif;
+        color: white;
+    }
+    body{
+        background-image: url('https://bfsi.eletsonline.com/wp-content/uploads/2023/06/Bank.jpg');
+        background-repeat: no-repeat;
+        background-position: 0px 0px;
+        background-size: cover;
+        
+    }
+    nav{
+        background-color: #1D3A4E;
+        display: flex;
+        justify-content: space-around;
+        border: none;
+        font-size: larger;
+        box-shadow: 0px 5px 7px #030B11;
+        border-radius: 0px 0px 20px 20px;
+    }
+    nav a{
+        text-decoration: none;
+    }
+    nav h3{
+        padding: 30px 15px 30px 15px;
+    }
+    nav h3:hover{
+        color: black;
+        background-color: #3e6d8d;
+        border-radius: 10px;
+        border: none;
+        transform: scale(1.1);
+    }
+    h1{
+        margin: 200px 0px 0px 35px;
+        text-transform: uppercase;
+        font-size: 50px;
+        color: #7DC5F0;
+    }
+    div{
+        margin-left: 35px;
+        height: 400px;
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    h2{
+        font-size: 40px;
+        color: #7DC5F0;
+    }
+    h3{
+       font-size: 30px;
+       color: #7DC5F0; 
+    }
+    ul li{
+        font-size: 20px;
+        color: #55A4D8;
+        margin-bottom: 25px;
+    }
+    strong{
+        color: #7DC5F0;
+    }
+</style>
+<body>
+    <nav>
+        <a href="#"><h3>{{ username }}</h3></a>    
+        <a href="{{url_for('Withdraw')}}"><h3>Withdraw</h3></a>
+        <a href="{{url_for('Balance')}}"><h3>Balance Enquiry</h3></a>
+        <a href="{{url_for('Deposite')}}"><h3>Deposite</h3></a>
+        <a href="{{url_for('userstatements')}}"><h3>Mini-statement</h3></a>
+        <a href="{{url_for('userAcDel')}}"><h3>Account Delete</h3></a>
+        <a href="{{url_for('userlogout')}}"><h3>Log out</h3></a>
+    </nav>
+    <h1>Welcome to our services</h1>
+    <div>
+        <h2>Please read our application features</h2>
+    <ul style="list-style-type: square;">
+        <li><strong>Seamless Fund Management:</strong> Effortlessly deposit or withdraw funds with real-time balance updates, ensuring your account status is always accurate and up-to-date.</li>
+        <li><strong>Transaction Tracking:</strong> Access a detailed digital ledger of your banking history to monitor your spending habits and verify every transaction at a glance.</li>
+        <li><strong>Bank-Grade Security Protocol:</strong> Rest easy knowing your session is protected by encrypted authentication and automated timeouts designed to keep your assets safe.</li>
+        <li><strong>24/7 Digital Accessibility:</strong> Experience the freedom of "anytime banking" with a streamlined interface optimized for instant access across all your devices.</li>
+    </ul>
+    <h3>Thank You...</h3>
+    </div>
+</body>
+</html>

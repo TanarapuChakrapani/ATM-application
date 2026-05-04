@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="icon" href="https://www.shutterstock.com/image-vector/atm-symbol-button-sign-vector-600nw-2407755695.jpg">
+</head>
+<style>
+    *{
+        font-family: sans-serif;
+        margin: 0;
+    }
+    #container{
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #container h1{
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 200px;
+        font-size: 60px;
+    }
+    div{
+        width: 900px;
+        display: flex;
+        justify-content: space-around;
+    }
+    button a{
+        text-decoration: none;
+        color: black;
+    }
+    button{
+        font-size: 30px;
+        border-radius: 10px;
+        padding: 20px;
+        font-weight: bold;
+        background-color: #FFCE12;
+    }
+    .btn2{
+        padding: 20px 60px 20px 60px;
+    }
+
+    @media all and (max-width:576px){
+        #container{
+            border: solid red;
+            width: 576px;
+        }
+        #container h1{
+            font-size: 35px;
+            margin-bottom: 30px;
+            width: 500px;
+        }
+        div{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: solid red;
+        }
+        button{
+        font-size: 20px;
+        border-radius: 10px;
+        padding: 20px 100px 20px 100px;
+        font-weight: bold;
+        }
+        .btn2{
+           padding: 20px 125px 20px 125px; 
+           margin-top: 10px;
+        }
+    }
+     @media all and (min-width:576px) and (max-width:768px){
+        #container h1{
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+        div{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        }
+        button{
+        font-size: 20px;
+        border-radius: 10px;
+        padding: 20px 140px 20px 140px;
+        font-weight: bold;
+        }
+        .btn2{
+           padding: 20px 165px 20px 165px; 
+           margin-top: 10px;
+        }
+    }
+</style>
+<body style="background-color: #151357;">
+    <section id="container">
+        <h1>Welcome  to ATM application</h1>
+        <div>
+            <a href="{{url_for('Registration')}}"><button class="btn1">Registration</button></a>
+            <a href="{{url_for('Login')}}"><button class="btn2">Log in</button></a>
+        </div>
+    </section>
+</body>
+</html>

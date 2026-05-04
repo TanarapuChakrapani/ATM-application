@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Enquiry</title>
+    <link rel="icon" href="https://www.shutterstock.com/image-vector/atm-symbol-button-sign-vector-600nw-2407755695.jpg">
+</head>
+<style>
+    *{
+        margin: 0;
+        font-family: sans-serif;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: white;
+    }
+    form label{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 60px;
+    }
+    p{
+        background-color: #FFCE12;
+        color: black;
+        padding: 20px 60px 20px 60px;
+        margin-top: 40px;
+        border: inset;
+        border-radius: 10px;
+    }
+</style>
+<body style="background-color: #151357;">
+    <form method="post">
+        <label>Balance amount</label>
+        <p>{{balance_amount}}</p>
+    </form>
+</body>
+</html>

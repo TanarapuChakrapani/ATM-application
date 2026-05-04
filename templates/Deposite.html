@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposite</title>
+    <link rel="icon" href="https://www.shutterstock.com/image-vector/atm-symbol-button-sign-vector-600nw-2407755695.jpg">
+</head>
+<style>
+    *{
+        margin: 0;
+        font-family: sans-serif;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: white;
+    }
+    form label{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 60px;
+        margin-bottom: 40px;
+    }
+    button{
+        background-color: #FFCE12;
+        padding: 20px 60px 20px 60px;
+        border-radius: 10px;
+        font-weight: bolder;
+        font-size: larger;
+    }
+    form input{
+        padding: 30px 80px 30px 10px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 20px;
+        outline: none;
+    }
+</style>
+<body style="background-color: #151357;">
+    <form method="post">
+        {% with messages= get_flashed_messages() %}
+            {% if messages %}
+                {% for i in messages %}
+                    <p style="color: greenyellow; margin-top: 30px;">{{ i }}</p>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <label>Deposite amount</label>
+        <input type="text" name="amount" placeholder="Enter amount" required/>
+        <button>Deposite</button>
+    </form>
+</body>
+</html>
